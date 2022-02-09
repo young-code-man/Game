@@ -878,7 +878,7 @@ class Player:
                     amnt += self.coinSlots[i].amnt
         return amnt
 
-    def changeItem(self, name, amnt):  # check hotbar and inventory for item, then use empty spaces
+    def changeItem(self, name, amnt):
         for i in range(10):
             if self.hotbar[i] != None:
                 if self.hotbar[i].name == name:
@@ -997,7 +997,7 @@ class Player:
                                         if self.vel[1] < 0:
                                             self.vel = (self.vel[0], 0)
                                 else:
-                                    if val == 5:  # platform code
+                                    if val == 5:
                                         if self.vel[1] >= 0:
                                             if self.rect.bottom <= blockrect.top + 10:
                                                 if not movingDown:
@@ -1290,7 +1290,6 @@ class button:
             win.blit(text, (self.x + (self.width / 2 - text.get_width() / 2), self.y + (self.height / 2 - text.get_height() / 2)))
 
     def isOver(self, pos):
-        # Pos is the mouse position or a tuple of (x,y) coordinates
         if pos[0] > self.x and pos[0] < self.x + self.width:
             if pos[1] > self.y and pos[1] < self.y + self.height:
                 return True
